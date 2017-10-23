@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="first_icon_top">160dp</dimen>
+    <dimen name="first_text">230dp</dimen>
+    <dimen name="first_icon_left">320dp</dimen>
+
+    <dimen name="first_kanba_top">150dp</dimen>
+    <dimen name="first_login_top">800dp</dimen>
+    <dimen name="first_register_top">800dp</dimen>
+    <dimen name="guanbi_left">720dp</dimen>
+
+
+</resources>

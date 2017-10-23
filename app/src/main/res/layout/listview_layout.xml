@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@mipmap/shenmu"
+        />
+
+    <TextView
+        android:id="@+id/book_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="神墓"
+        android:textSize="20dp"
+        android:layout_alignTop="@+id/image"
+        android:layout_toRightOf="@+id/image"
+        android:layout_marginTop="5dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/book_name"
+        android:layout_alignLeft="@+id/book_name"
+        android:layout_marginTop="5dp"
+        android:text="【书籍简介】这里是神墓的世界"
+
+        />
+    <ImageView
+        android:id="@+id/touxiang"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@mipmap/touxiang"
+        android:layout_alignBottom="@+id/image"
+        android:layout_alignLeft="@+id/book_name"
+        android:layout_marginBottom="5dp"/>
+    <TextView
+        android:id="@+id/zuozhe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/touxiang"
+        android:text="张大仙"
+        android:layout_marginLeft="5dp"
+        android:paddingBottom="3dp"
+        android:layout_alignBottom="@+id/touxiang"
+        />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

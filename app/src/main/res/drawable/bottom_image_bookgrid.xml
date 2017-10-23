@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@mipmap/bookgridchoice" android:state_checked="true">
+    </item>
+    <item android:drawable="@mipmap/bookgrid" >
+    </item>
+</selector>
