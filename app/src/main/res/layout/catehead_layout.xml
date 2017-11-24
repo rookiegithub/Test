@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:id="@+id/first_rank"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="文本"
+        android:textColor="#000000"
+        android:gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:padding="10dp"
+        />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/shutiao"
+        android:layout_alignBottom="@+id/first_rank"
+        android:layout_toLeftOf="@+id/first_rank"
+        android:layout_toStartOf="@+id/first_rank"
+        android:visibility="gone"
+        />
+</RelativeLayout>

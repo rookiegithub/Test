@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F6F6F6">
+
+    <RelativeLayout
+        android:id="@+id/layout_re"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#FFFFFF"
+        >
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="微书·观书首选"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:typeface="serif"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            />
+        <ImageView
+            android:id="@+id/more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/more2"
+
+            android:layout_marginRight="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignBottom="@+id/title"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/search"
+
+            android:layout_toLeftOf="@+id/more"
+            android:layout_alignBottom="@+id/more"
+            android:layout_marginRight="20dp"/>
+
+    </RelativeLayout>
+
+
+    <GridView
+        android:id="@+id/gridview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:numColumns="3"
+        android:columnWidth="90dp"
+        android:stretchMode="columnWidth"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/layout_re"
+        android:background="#FFFFFF"
+        android:textColor="#000000"
+        />
+</RelativeLayout>

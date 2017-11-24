@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <android.support.design.widget.TabLayout
+    android:id="@+id/title1"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:background="#FFFFFF"
+    android:paddingTop="5dp"
+    app:tabContentStart="40dp"
+    app:tabTextColor="#000000"
+    app:tabSelectedTextColor="#00a8ff"
+    app:tabIndicatorColor = "#00a8ff"
+    app:tabMode="scrollable"
+    app:tabTextAppearance="@style/TabLayoutTextStyle">
+
+</android.support.design.widget.TabLayout>
+<ImageView
+    android:id="@+id/search"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="22dp"
+    android:src="@mipmap/search"
+    android:layout_marginLeft="@dimen/bookCity_search_left"/>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title1"
+        >
+    </android.support.v4.view.ViewPager>
+        <!--<ListView-->
+            <!--android:id="@+id/list"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--&gt;-->
+        <!--</ListView>-->
+
+</RelativeLayout>
