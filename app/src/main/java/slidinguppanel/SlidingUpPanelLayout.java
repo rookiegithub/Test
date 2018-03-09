@@ -333,7 +333,7 @@
 //        // If the shadow height is zero, don't show the shadow
 //        if (mShadowHeight > 0) {
 //            if (mIsSlidingUp) {
-//                mShadowDrawable = getResources().getDrawable(R.drawable.above_shadow);
+//                mShadowDrawable = getResources().getDrawable(R.drawable.book_detaildraw);
 //            } else {
 //                mShadowDrawable = getResources().getDrawable(R.drawable.below_shadow);
 //            }

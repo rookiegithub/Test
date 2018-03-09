@@ -20,24 +20,27 @@
             android:typeface="serif"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
             />
         <ImageView
             android:id="@+id/more"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/more2"
-
             android:layout_marginRight="20dp"
+            android:layout_marginEnd="20dp"
             android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:layout_alignBottom="@+id/title"/>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/search"
-
+            android:layout_toStartOf="@+id/more"
             android:layout_toLeftOf="@+id/more"
             android:layout_alignBottom="@+id/more"
-            android:layout_marginRight="20dp"/>
+            android:layout_marginRight="20dp"
+            android:layout_marginEnd="20dp"/>
 
     </RelativeLayout>
 

@@ -12,7 +12,8 @@
     <dimen name="bookCity_more_left">585dp</dimen>
 
     <dimen name="bookCity_rankPrefecture_left">565dp</dimen>
-    <dimen name="bookCity_search_left">723dp</dimen>
+    <!--<dimen name="bookCity_search_left">723dp</dimen>-->
+    <dimen name="find_umanoPanelHeight">800dp</dimen>
 
 
 

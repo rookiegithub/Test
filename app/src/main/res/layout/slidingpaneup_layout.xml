@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/head_find"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#DCDCDC"
+        >
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:paddingRight="20dp"
+            android:text="附近·发现"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:layout_marginLeft="20dp"
+            android:paddingTop="20dp"
+            />
+        <ImageView
+            android:id="@+id/title_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/search"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="22dp"
+
+            />
+        <TextView
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/textView2"
+            android:layout_height="1dp"
+            android:background="#DCDCDC"
+            />
+    </RelativeLayout>
+    <com.sothree.slidinguppanel.SlidingUpPanelLayout
+        xmlns:sothree="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/sliding_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        sothree:umanoPanelHeight="@dimen/find_umanoPanelHeight"
+        sothree:umanoShadowHeight="35dp"
+        sothree:umanoDragView="@+id/relativalayout"
+        sothree:umanoOverlay="true"
+        sothree:umanoScrollableView="@+id/list"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#DCDCDC">
+            <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="同城附近书友"
+            android:layout_below="@+id/head"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            />
+            <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:layout_below="@+id/textView3"
+            android:text="共同兴趣的那个ta"
+            android:textSize="15sp"
+            android:layout_alignLeft="@+id/textView3"
+            android:layout_marginTop="5dp"
+            />
+            <ImageView
+                android:id="@+id/more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:src="@mipmap/more"
+                android:layout_marginTop="20dp"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/more"
+                android:src="@mipmap/ic_launcher_round"
+                android:layout_marginTop="10dp"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativalayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#F6F6F6"
+            >
+
+
+            <ListView
+                android:id="@+id/list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:listSelector="@android:color/transparent">
+
+            </ListView>
+        </RelativeLayout>
+    </com.sothree.slidinguppanel.SlidingUpPanelLayout>
+
+</LinearLayout>

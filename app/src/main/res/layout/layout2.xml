@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/plate"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="大众频道"
+        android:paddingLeft="20dp"
+        android:gravity="center_vertical"
+        android:background="#F6F6F6"/>
+
+    <com.micbook.zhangqian.micbook.micBookGridView
+        android:layout_below="@+id/plate"
+        android:id="@+id/gridview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:numColumns="3"
+        android:columnWidth="90dp"
+        android:stretchMode="columnWidth"
+        android:background="#FFFFFF"
+        />
+
+</LinearLayout>

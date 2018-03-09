@@ -12,7 +12,7 @@ import com.mob.tools.gui.ScrollableListView;
  */
 
 public class micBookOnScrollView extends ScrollView {
-    private ScrollableListView scrollableListView;
+    private ScrollViewListener scrollViewListener;
     public micBookOnScrollView(Context context) {
         super(context);
     }
@@ -30,14 +30,18 @@ public class micBookOnScrollView extends ScrollView {
 //
 //    }
     public interface ScrollViewListener{
-    void onScrollChanged();
+    void onScrollChanged(micBookOnScrollView scrollView,int x,int y,int oldx,int oldy);
 }
 
-//    public void onScrollChanged(int x,int y, int oldx,int oldy){
-//        super.onScrollChanged(x,y,oldx,oldy);
-//        if(scrollableListView != null){
-//            scrollableListView.setOnScrollListener();
-//        }
-//    }
+public void setScrollViewListener(ScrollViewListener scrollViewListener){
+    this.scrollViewListener = scrollViewListener;
+}
+
+    public void onScrollChanged(int x,int y, int oldx,int oldy){
+        super.onScrollChanged(x,y,oldx,oldy);
+        if(scrollViewListener != null){
+            scrollViewListener.onScrollChanged(this,x,y,oldx,oldy);
+        }
+    }
 
 }

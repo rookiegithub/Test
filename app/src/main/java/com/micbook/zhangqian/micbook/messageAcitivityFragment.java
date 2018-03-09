@@ -1,10 +1,13 @@
 package com.micbook.zhangqian.micbook;
-import android.app.Fragment;
+import android.content.ContentValues;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 
+import android.support.v4.app.Fragment;
+import android.support.v4.view.NestedScrollingChild;
+import android.support.v4.widget.NestedScrollView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -21,7 +24,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.nineoldandroids.view.ViewHelper;
+import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
 import static cn.bmob.v3.BmobRealTimeData.TAG;
 
@@ -34,43 +37,21 @@ public class messageAcitivityFragment extends Fragment {
 
     private Context mContext;
     private TextView mTextView;
-    RelativeLayout headview;
+    LinearLayout headview;
     int type_1 = 1;
     int [] book_image = {
-            R.mipmap.shenmu,
-            R.mipmap.heiyi,
-            R.mipmap.yemu,
-            R.mipmap.badao,
-            R.mipmap.shenmu,
-            R.mipmap.heiyi,
-            R.mipmap.yemu,
-            R.mipmap.badao,
-            R.mipmap.shenmu,
-            R.mipmap.heiyi,
-            R.mipmap.yemu,
-            R.mipmap.badao,
-            R.mipmap.shenmu,
-            R.mipmap.heiyi,
-            R.mipmap.yemu,
-            R.mipmap.badao,
-            R.mipmap.shenmu,
-            R.mipmap.heiyi,
-            R.mipmap.yemu,
-            R.mipmap.badao
+            R.mipmap.medll,
+            R.mipmap.bookln1,
+            R.mipmap.bookhelp,
+            R.mipmap.bookln,
+            R.mipmap.weal,
+            R.mipmap.hopeful,
     };
     String[] book_names = {
-            "神墓","黑衣舰队",
-            "夜幕降临","霸道总裁",
-            "神墓","黑衣舰队",
-            "夜幕降临","霸道总裁",
-            "神墓","黑衣舰队",
-            "夜幕降临","霸道总裁",
-            "神墓","黑衣舰队",
-            "夜幕降临","霸道总裁",
-            "神墓","黑衣舰队",
-            "夜幕降临","霸道总裁",
-            "神墓","黑衣舰队",
-            "夜幕降临","霸道总裁"
+            "我的动态","广场吐槽",
+            "书荒助手","吸睛神评",
+            "福利大发送","敬请期待",
+
     };
     String[] book_info = {
             "神墓的世界","黑衣舰队的队长",
@@ -80,21 +61,67 @@ public class messageAcitivityFragment extends Fragment {
             "排骨","牛肉",
             "牡蛎","龙虾"
     };
-    public messageAcitivityFragment(Context context){
+    String[] fun_name = {
+            "个人信息","消息中心",
+            "文件管理","历史记录",
+            "我的收藏"
+    };
+    private SlidingUpPanelLayout mLayout;
+
+//    @Override
+//    public void onAttach(Context context) {
+//        super.onAttach(context);
+//        mContext = context;
+//    }
+
+//    public messageAcitivityFragment(Context context){
+//        mContext = context;
+//    }
+    public void onAttach(Context context) {
+        super.onAttach(context);
         mContext = context;
     }
-
     @Override
     public View onCreateView(final LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-        headview = (RelativeLayout) LayoutInflater.from(mContext).inflate(R.layout.find_layout,null);
+long time = System.currentTimeMillis();
+        Log.i(TAG, "message1: "+time);
+        headview = (LinearLayout) LayoutInflater.from(mContext).inflate(R.layout.slidingpaneup_layout,null);
+//        headview = (RelativeLayout) LayoutInflater.from(mContext).inflate(R.layout.find_layout,null);
         final RelativeLayout he = (RelativeLayout)headview.findViewById(R.id.head_find);
-        final FrameLayout he1 = (FrameLayout)headview.findViewById(R.id.head);
+//        final FrameLayout he1 = (FrameLayout)headview.findViewById(R.id.head);
 //        final ListView listV = (ListView)headview.findViewById(R.id.list);
 
-        //View headview1 = LayoutInflater.from(mContext).inflate(R.layout.layout1,null);
-        GridView gv = (GridView)headview.findViewById(R.id.renqigridview);
-        gv.setAdapter(new ImageAdapter(mContext,book_names,book_image,type_1));
+        View view = LayoutInflater.from(mContext).inflate(R.layout.layout2,null);
+        //View view = LayoutInflater.from(mContext).inflate(R.layout.layout2,null);
+        GridView gridView = (GridView)view.findViewById(R.id.gridview);
+        gridView.setAdapter(new ImageAdapter(mContext,book_names,book_image,2));
+        //gridView.setAdapter(new ImageAdapter(mContext,book_names,book_image,2));
+        ListView listView = (ListView)headview.findViewById(R.id.list);
+        listView.addHeaderView(view);
+        listView.setAdapter(new ImageAdapter(mContext,9));
+
+        mLayout = (SlidingUpPanelLayout)headview.findViewById(R.id.sliding_layout);
+        mLayout.addPanelSlideListener(new SlidingUpPanelLayout.PanelSlideListener() {
+            @Override
+            public void onPanelSlide(View panel, float slideOffset) {
+                if(slideOffset == 1.0){
+                    he.setBackgroundColor(Color.parseColor("#FFFFFF"));
+                }else {
+                    he.setBackgroundColor(Color.parseColor("#DCDCDC"));
+                }
+            }
+            @Override
+            public void onPanelStateChanged(View panel, SlidingUpPanelLayout.PanelState previousState, SlidingUpPanelLayout.PanelState newState) {
+
+            }
+        });
+        long time1 = System.currentTimeMillis();
+        Log.i(TAG, "message1: "+time1);
+        Log.i(TAG, "message: "+(time1-time));
+//        int a =new NestedScrollView(mScrollview).getScrollY();
+//View headview1 = LayoutInflater.from(mContext).inflate(R.layout.layout1,null);
+//        GridView gv = (GridView)headview.findViewById(R.id.renqigridview);
+//        gv.setAdapter(new ImageAdapter(mContext,book_names,book_image,type_1));
 
 
 //        listV.addHeaderView(headview1);

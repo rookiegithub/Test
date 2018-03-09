@@ -44,6 +44,8 @@
         </activity>
         <activity android:name=".MainActivity">
         </activity>
+        <activity android:name=".ContainerActivity">
+        </activity>
     </application>
 
 </manifest>

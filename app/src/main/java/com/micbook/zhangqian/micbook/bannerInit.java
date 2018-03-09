@@ -20,6 +20,7 @@ import java.util.List;
 public class bannerInit {
 
     public static final int []BANNER = new int[]{R.mipmap.banner1,R.mipmap.banner2,R.mipmap.banner3,R.mipmap.banner4,R.mipmap.banner5};
+    //public static final int []BANNER = new int[]{R.mipmap.ic_launcher_round,R.mipmap.ic_launcher};
     private MZBannerView1 mMZBanner;
 
     void initView(View view, final Context context) {

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+       android:shape="rectangle"
+    android:useLevel="false">
+<!--设置背景颜色-->
+    <solid android:color="#DCDCDC">
+<!--设置圆角的大小-->
+    </solid>
+    <corners android:radius="25dp">
+
+    </corners>
+    <!--设置内边距-->
+    <padding
+        android:bottom="4dp"
+        android:left="10dp"
+        android:right="10dp"
+        android:top="4dp">
+    </padding>
+    <!--设置着色标签大小-->
+    <size
+        android:width="55dp"
+        android:height="5dp">
+    </size>
+</shape>

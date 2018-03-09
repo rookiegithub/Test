@@ -25,7 +25,9 @@
     android:layout_height="wrap_content"
     android:layout_marginTop="22dp"
     android:src="@mipmap/search"
-    android:layout_marginLeft="@dimen/bookCity_search_left"/>
+    android:layout_alignParentRight="true"
+    android:layout_marginRight="20dp"
+    />
     <android.support.v4.view.ViewPager
         android:id="@+id/viewPage"
         android:layout_width="match_parent"

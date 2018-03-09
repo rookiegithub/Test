@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    >
+    <RelativeLayout
+        android:id="@+id/head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <ImageView
+            android:id="@+id/book_blur"
+            android:layout_width="match_parent"
+            android:layout_height="185dp"
+            />
+        <TextView
+            android:id="@+id/book_blur1"
+            android:layout_width="match_parent"
+            android:layout_height="185dp"
+            android:background="@drawable/book_detaildraw"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/head_layout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        >
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@mipmap/back"
+            android:layout_marginLeft="15dp"
+            android:layout_centerVertical="true"/>
+        <ImageView
+            android:id="@+id/share"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@mipmap/share"
+            android:layout_marginRight="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"/>
+        <ImageView
+            android:id="@+id/collect"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@mipmap/collect"
+            android:layout_toLeftOf="@+id/share"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="书籍详情"
+            android:textSize="20sp"
+            android:textColor="#000000"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/back"
+            android:layout_toEndOf="@+id/back"
+            android:layout_centerVertical="true"/>
+
+    </RelativeLayout>
+
+    <com.micbook.zhangqian.micbook.micBookOnScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp"
+        android:orientation="vertical"
+        android:paddingBottom="50dp"
+        android:clipToPadding="false"
+        android:layout_above="@+id/v"
+        android:layout_below="@+id/head_layout">
+
+    <RelativeLayout
+        android:id="@+id/book"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+     <ImageView
+         android:id="@+id/book_cover"
+         android:layout_width="80dp"
+         android:layout_height="120dp"
+         android:src="@mipmap/shenmu"
+         android:scaleType="fitXY"
+         android:layout_marginLeft="15dp"
+         />
+        <TextView
+            android:id="@+id/book_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/book_cover"
+            android:text="山河醉春秋"
+            android:textSize="20sp"
+            android:layout_marginLeft="15dp"
+            android:textColor="#000000"
+            />
+        <TextView
+            android:id="@+id/book_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/book_name"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/book_name"
+            android:text="连载 | 夜阑听风雨"
+            android:textSize="14sp"
+            />
+        <RelativeLayout
+            android:id="@+id/a"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/book_cover"
+            android:layout_marginTop="70dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@mipmap/bayou"
+                android:text="16.2万"
+                android:gravity="center"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="15dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="118万"
+                android:gravity="center"
+                android:drawableTop="@mipmap/bayou"
+                android:layout_centerInParent="true"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10.5万字"
+                android:gravity="center"
+                android:drawableTop="@mipmap/bayou"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="15dp"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/b"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F6F6F6"
+            android:layout_below="@+id/a"
+            android:paddingBottom="10dp"
+            >
+        <TextView
+            android:id="@+id/book_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/book_cover"
+            android:layout_alignLeft="@+id/book_cover"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:text="标签"
+            android:textSize="12sp"
+            android:background="@drawable/tag_bakground"
+            android:gravity="center"
+            />
+        <TextView
+            android:id="@+id/book_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/book_tag"
+            android:layout_alignLeft="@+id/book_tag"
+            android:layout_marginTop="15dp"
+            android:text="书籍简介"
+            android:textSize="15sp"
+            />
+        <TextView
+            android:id="@+id/book_section"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/book_info"
+            android:layout_alignLeft="@+id/book_tag"
+            android:layout_marginTop="15dp"
+            android:text="共256章"
+            android:textSize="15sp"
+            />
+        <TextView
+            android:id="@+id/book_section1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/book_info"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="15dp"
+            android:layout_alignParentRight="true"
+            android:text="查看目录"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:drawableRight="@mipmap/more"
+            android:textSize="15sp"
+            />
+
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/book_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/b"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="15dp"
+            android:text="第一章 远古"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            />
+        <TextView
+            android:id="@+id/book_content1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/book_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:text="穿越了宇宙洪荒，凝练了天地玄黄纵使摆脱了六道轮回，也难逃那天地动荡
+神魔陵园位于天元大陆中部地带，整片陵园除了安葬着人类历代的最强者、异类中的顶级修炼者外，其余每一座坟墓都埋葬着一位远古的神或魔，这是一片属于神魔的安息之地。
+陵园内绿草如茵，鲜花芬芳，如果没有那成片的碑林，称之为花园也不为过。陵园外围是高大的雪枫树，惟神魔陵园特有，相传为已逝神魔灵气所化。
+雪枫树碧绿的枝叶郁郁葱葱，随着微风轻轻摇曳，仿佛在追忆那昔日的辉煌，雪白的花瓣洁白无暇，如雪花一般在空中漫漫飘洒，这是神灵的眼泪，似在诉说那曾经的悲伤。
+
+    墓园的白天和黑夜有着截然相反的景象。
+
+    白天这里仙气氤氲，圣洁的光辉洒遍了陵园的每一寸土地，可以看到由远古神魔那不灭的强大神念幻化成的各种神祗，甚至能看到西方天使起舞，能听到东方仙子歌唱，整片陵园处在一种神圣的氛围之内。
+
+    如果白天这里是神的乐园，那么夜晚这里便是魔的净土。
+
+    每当夕阳西下，夜幕降临之际，暗黑魔气便开始自墓地中汹涌澎湃而出，令星月为之失色，令天地为之惨淡。此时，可以看到传说中的凶神幻象、恶魔虚影在陵园内肆虐，可以听到远古恶灵那令人头皮发麻的凄厉长嚎。"
+            android:textSize="15sp"
+            android:maxLines="8"
+            android:ellipsize="end"
+            android:background="#cccccc"
+            />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/book_content1"
+            android:layout_marginTop="15dp"
+            android:background="#f6f6f6"
+            >
+            <TextView
+                android:id="@+id/book_friends"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="书友热读"
+                android:layout_marginLeft="15dp"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                />
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/book_friends"
+                android:scrollbars="none"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="10dp"
+                >
+
+            </android.support.v7.widget.RecyclerView>
+            <TextView
+                android:id="@+id/allComment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_below="@+id/recycler"
+                android:text="全部评论"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                />
+
+            <!--<ImageView android:id="@+id/iv_blur"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="200dp" />-->
+
+            <!--<ImageView android:id="@+id/iv_avatar"-->
+                <!--android:layout_width="60dp"-->
+                <!--android:layout_height="60dp"-->
+                <!--android:layout_centerInParent="true"/>-->
+            <ListView
+                android:id="@+id/comment"
+                android:layout_below="@+id/allComment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:listSelector="@android:color/transparent">
+            </ListView>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</com.micbook.zhangqian.micbook.micBookOnScrollView>
+
+    <RelativeLayout
+        android:id="@+id/v"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#CCCCCC"
+            android:layout_above="@+id/bookdetail_bottom"
+            />
+
+        <LinearLayout
+            android:id="@+id/bookdetail_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:background="#f6f6f6"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="下载"
+                android:textColor="#3ca6fe"
+                android:gravity="center"
+                android:layout_weight="10"
+                />
+            <TextView
+                android:id="@+id/read"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="立刻阅读"
+                android:textColor="#f6f6f6"
+                android:gravity="center"
+                android:layout_weight="10"
+
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="加入书架"
+                android:textColor="#3ca6fe"
+                android:gravity="center"
+                android:layout_weight="10"/>
+
+
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="立刻阅读"
+            android:textColor="#f6f6f6"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            android:background="@mipmap/read"
+            />
+    </RelativeLayout>
+</FrameLayout>

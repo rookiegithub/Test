@@ -108,10 +108,64 @@ public class listviewAdapter extends BaseAdapter {
     }
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View view = null;
+        ViewHolder holder = null;
         int typeView = getViewItemType(position);
         int a = 0;
-        switch (typeView){
+
+            switch (typeView){
+
+                case 1:
+                        //view = convertView.inflate(mContext, R.layout.listview_layout, null);
+                    if(convertView == null){
+                    holder = new ViewHolder();
+                        convertView = LayoutInflater.from(mContext).inflate(R.layout.listview_layout, null);
+                        holder.iv = (ImageView) convertView.findViewById(R.id.images);
+                        holder.tv  = (TextView) convertView.findViewById(R.id.book_name);//bookName
+                        holder.tv1 = (TextView) convertView.findViewById(R.id.book_info);//TextView bookInfo
+                        holder.tv2 = (TextView) convertView.findViewById(R.id.author);//TextView bookAuthor
+                    convertView.setTag(holder);
+                    }else {
+                    holder = (ViewHolder)convertView.getTag();
+                }
+
+
+                    //TextView booktitle = (TextView)view.findViewById(R.id.head);
+                    Log.i("tag", "getView: "+book_images.length+","+position);
+                    if(position<5){
+                        holder.iv.setImageResource(book_images[position]);
+                        holder.tv.setText(book_name[position]);//bookName
+                        holder.tv1.setText(book_info[position]);//bookInfo
+                        holder.tv2.setText(book_author[position]);//bookAuthor
+                    }else {
+                        int e = (book_images.length+maxImage.length)/5;
+                        holder.iv.setImageResource(book_images[position - e]);
+                        holder.tv.setText(book_name[position - e]);//bookName
+                        holder.tv1.setText(book_info[position - e]);//bookInfo
+                        holder.tv2.setText(book_author[position - e]);//bookAuthor
+                    }
+                    break;
+                case 2:
+
+                    int b = 0;
+                    if((position%5)==0){
+                        b = a+b;
+                        a++;
+                    }
+                    if(convertView==null){
+                        holder = new ViewHolder();
+                        convertView = LayoutInflater.from(mContext).inflate(R.layout.maximage_layout, null);
+                        holder.iv = (ImageView) convertView.findViewById(R.id.maxImage);
+                        holder.tv1 = (TextView) convertView.findViewById(R.id.maxImage_titile);
+                        holder.tv2 = (TextView) convertView.findViewById(R.id.maxImage_info);
+                        convertView.setTag(holder);
+                }else {
+                        holder = (ViewHolder)convertView.getTag();
+                    }
+                    holder.iv.setImageResource(maxImage[b]);
+                    holder.tv1.setText(maxImage_title[b]);//textView
+                    holder.tv2.setText(maxImage_info[b]);//textView1
+        }
+
 
 //            case 1:
 //                view = convertView.inflate(mContext, R.layout.listview_layout, null);
@@ -127,43 +181,15 @@ public class listviewAdapter extends BaseAdapter {
 //                bookAuthor1.setText(book_author1);
 //
 //                break;
-            case 1:
-                    view = convertView.inflate(mContext, R.layout.listview_layout, null);
-                    ImageView bookimage = (ImageView) view.findViewById(R.id.images);
-                    TextView bookName = (TextView) view.findViewById(R.id.book_name);
-                    TextView bookInfo = (TextView) view.findViewById(R.id.book_info);
-                    TextView bookAuthor = (TextView) view.findViewById(R.id.author);
-                    //TextView booktitle = (TextView)view.findViewById(R.id.head);
-                    Log.i("tag", "getView: "+book_images.length+","+position);
-                if(position<5){
-                    bookimage.setImageResource(book_images[position]);
-                    bookName.setText(book_name[position]);
-                    bookInfo.setText(book_info[position]);
-                    bookAuthor.setText(book_author[position]);
-                }else {
-                    int e = (book_images.length+maxImage.length)/5;
-                    bookimage.setImageResource(book_images[position - e]);
-                    bookName.setText(book_name[position - e]);
-                    bookInfo.setText(book_info[position - e]);
-                    bookAuthor.setText(book_author[position - e]);
-                }
-                break;
-            case 2:
-                int b = 0;
-                if((position%5)==0){
-                    b = a+b;
-                    a++;
-                }
-                 view = LayoutInflater.from(mContext).inflate(R.layout.maximage_layout, null);
-                 ImageView imageView = (ImageView) view.findViewById(R.id.maxImage);
-                 imageView.setImageResource(maxImage[b]);
-                 TextView textView = (TextView) view.findViewById(R.id.maxImage_titile);
-                 textView.setText(maxImage_title[b]);
-                 TextView textView1 = (TextView) view.findViewById(R.id.maxImage_info);
-                 textView1.setText(maxImage_info[b]);
-        }
-        return view;
-    }
 
+
+        return convertView;
+    }
+static class ViewHolder{
+    TextView tv;
+    TextView tv1;
+    TextView tv2;
+    ImageView iv;
+    }
 
 }

@@ -5,40 +5,6 @@
     android:orientation="vertical"
     android:background="#F6F6F6"
     >
-
-    <!--<TextView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:gravity="center_vertical"-->
-        <!--android:paddingLeft="20dp"-->
-        <!--android:paddingRight="20dp"-->
-        <!--android:textColor="#000000"-->
-        <!--android:paddingTop="10dp"-->
-        <!--android:textSize="17sp"-->
-        <!--android:background="#FFFFFF"-->
-        <!--android:id="@+id/maxImage_titile"-->
-        <!--/>-->
-    <!--<TextView-->
-        <!--android:layout_below="@+id/maxImage_titile"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="30dp"-->
-        <!--android:background="#FFFFFF"-->
-        <!--android:paddingLeft="20dp"-->
-        <!--android:gravity="center_vertical"-->
-        <!--android:paddingRight="20dp"-->
-        <!--android:id="@+id/maxImage_info"-->
-        <!--/>-->
-    <!--<ImageView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="120dp"-->
-        <!--android:layout_below="@+id/maxImage_info"-->
-        <!--android:id="@+id/maxImage"-->
-        <!--android:paddingLeft="20dp"-->
-        <!--android:background="#FFFFFF"-->
-        <!--android:paddingRight="20dp"-->
-        <!--android:paddingBottom="15dp"-->
-        <!--android:paddingTop="3dp"-->
-        <!--android:scaleType="fitXY"/>-->
     <TextView
         android:id="@+id/line"
         android:layout_width="match_parent"
@@ -49,10 +15,10 @@
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:id="@+id/renqi"
-        android:layout_below="@+id/maxImage"
         android:textSize="15sp"
         android:gravity="center_vertical"
-        android:paddingLeft="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
         android:text="☆ 人气好书 ☆"
         android:textColor="#000000"/>
     <TextView
@@ -68,7 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/line1"
         android:numColumns="3"
-        android:columnWidth="90dp"
+
         android:stretchMode="columnWidth"
         android:background="#FFFFFF"
         android:textColor="#000000"
@@ -89,7 +55,8 @@
         android:layout_below="@id/line2"
         android:textSize="15sp"
         android:gravity="center_vertical"
-        android:paddingLeft="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
         android:text="☆ 精品推荐 ☆"
         android:textColor="#000000"/>
     <TextView
@@ -99,8 +66,11 @@
         android:gravity="center_vertical"
         android:layout_alignTop="@+id/renqi"
         android:layout_toRightOf="@+id/renqi"
+        android:layout_toEndOf="@+id/renqi"
         android:layout_marginLeft="@dimen/bookCity_more_left"
+        android:layout_marginStart="@dimen/bookCity_more_left"
         android:drawableRight="@mipmap/more"
+        android:drawableEnd="@mipmap/more"
 
         />
 
